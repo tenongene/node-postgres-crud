@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <scrip src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            
+  <title>User Data</title>
+</head>
+<body class="background light-blue lighten-5">
+  <nav class="background blue darken-1 center-align indigo-text text-darken-4 " style="font-size: 20px; ">
+    USER DATA
+  </nav>
+  <div class="container">
+    <table>
+        <thead class="blue-text darken-1">
+          <tr>
+              <th>ID</th>
+              <th>FIRST NAME</th>
+              <th>LAST NAME</th>
+              <th>GENDER</th>
+              <th>FAVORITE COLOR</th>
+              <th>
+  <a  href="adduser" class="btn-floating btn-medium waves-effect waves-light green lighten-1"><i class="material-icons">add</i></a>
+        </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <div>
+            <% if (results.length > 0) { %>
+                  <% results.forEach(result => { %>
+                    <tr>
+                      <td><%= result.id %></td>
+                      <td><%= result.first_name %></td>
+                      <td><%= result.last_name %></td>
+                      <td><%= result.gender %></td>
+                      <td><%= result.fav_color %></td>
+                      <td><a href="<%= result.id %>"   class="delete waves-effect waves-light btn-small red lighten-1"><i class="material-icons left">close</i>delete user</a></td>
+                    </tr>
+                  <% }) %>
+            <% } %>
+          </div>             
+        </tbody>
+      </table>
+  </div>
+</body>
+</html>
